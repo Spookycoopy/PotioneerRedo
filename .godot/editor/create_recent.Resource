@@ -1,0 +1,3 @@
+Effect
+Ingrident_Resource
+Item

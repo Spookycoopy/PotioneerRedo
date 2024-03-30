@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Ingrident_Resource" load_steps=4 format=3 uid="uid://bg18p3yvd638i"]
+
+[ext_resource type="Script" path="res://Item and inventory Management/IngridentResource.gd" id="1_cq6xx"]
+[ext_resource type="Script" path="res://Item and inventory Management/Effect/Scripts/EffectResource.gd" id="1_g1xj1"]
+
+[sub_resource type="Resource" id="Resource_nacng"]
+script = ExtResource("1_g1xj1")
+Usable = true
+OneShot = true
+healing = 5.0
+speed = 0.0
+defense = 0.0
+Phys_Moves = 0.0
+Magic_Moves = 0.0
+tick = 0.0
+duration = 0.0
+falloff = 2.0
+
+[resource]
+script = ExtResource("1_cq6xx")
+ingri_name = "Valo Aera"
+ingri_discription = "healing plant! can be used on its own to restore some hp"
+quantity = 0
+capacity = 99
+effect = SubResource("Resource_nacng")
+craftable = false

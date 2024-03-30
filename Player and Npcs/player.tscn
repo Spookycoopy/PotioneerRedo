@@ -1,0 +1,302 @@
+[gd_scene load_steps=17 format=3 uid="uid://dxtq0fk6eofpv"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_hx7nr"]
+[ext_resource type="Texture2D" uid="uid://cbetpmyjjtij0" path="res://Sprites/potioneer.png" id="2_16vvg"]
+[ext_resource type="Resource" uid="uid://d1k2f0xgrpowa" path="res://Player and Npcs/Resources/Potioneer.tres" id="2_leqw0"]
+[ext_resource type="Texture2D" uid="uid://cfwxabc0neskr" path="res://Sprites/particle/cloud.png" id="3_wcbjg"]
+[ext_resource type="Script" path="res://Item and inventory Management/Equipment.gd" id="4_fmwce"]
+[ext_resource type="PackedScene" uid="uid://b75pxb5i606x4" path="res://Scenes/potion.tscn" id="4_jj4kj"]
+[ext_resource type="Script" path="res://Player and Npcs/PlayerInventory.gd" id="5_khdi2"]
+[ext_resource type="Resource" uid="uid://bpg7j7gqfhmlm" path="res://Item and inventory Management/Effect/Resource/Healing.tres" id="8_3p45f"]
+[ext_resource type="Script" path="res://Item and inventory Management/Effect/Scripts/EffectHandler.gd" id="8_6tc1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46bd6"]
+size = Vector2(73, 92)
+
+[sub_resource type="Curve" id="Curve_s7nin"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_4dhqw"]
+resource_name = "IDLE"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpritePos/Potioneer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2.73208, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpritePos/Potioneer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(2.73208, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1, 16), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpritePos/Potioneer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(2.73208, 1, 1),
+"update": 0,
+"values": [Vector2(0.15, 0.15), Vector2(0.170825, 0.108552), Vector2(0.15, 0.15)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpritePos/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hvldo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpritePos/Potioneer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpritePos/Potioneer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpritePos/Potioneer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.170825, 0.108552)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpritePos/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bjn2s"]
+resource_name = "ROLL"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpritePos/Potioneer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 0.31864, 1),
+"update": 0,
+"values": [0.0, 3.14159, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpritePos/Potioneer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 0.31864, 1),
+"update": 0,
+"values": [Vector2(0.15, 0.15), Vector2(0.0911195, 0.153102), Vector2(0.106819, 0.0840977), Vector2(0.15, 0.15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpritePos/Potioneer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 0.31864, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(9, 21), Vector2(0, 24), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpritePos/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_53pgy"]
+resource_name = "Walking"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpritePos/Potioneer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.261799, 0.0, 0.301942, 0.0, -0.261799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpritePos/Potioneer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7.45058e-08, -5), Vector2(0, 0), Vector2(0, -5), Vector2(0, 0), Vector2(7.45058e-08, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpritePos/Potioneer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.15)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpritePos/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5n2av"]
+_data = {
+"IDLE": SubResource("Animation_4dhqw"),
+"RESET": SubResource("Animation_hvldo"),
+"ROLL": SubResource("Animation_bjn2s"),
+"Walking": SubResource("Animation_53pgy")
+}
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inv", "equipment", "effectManager") groups=["Player"]]
+script = ExtResource("1_hx7nr")
+player_info = ExtResource("2_leqw0")
+inv = NodePath("Inventory")
+equipment = NodePath("Hand")
+effectManager = NodePath("Effect_Manager")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_46bd6")
+
+[node name="SpritePos" type="Node2D" parent="."]
+
+[node name="Potioneer" type="Sprite2D" parent="SpritePos"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_16vvg")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="SpritePos"]
+z_index = -1
+texture_filter = 1
+position = Vector2(-15, 35)
+emitting = false
+amount = 5
+lifetime = 0.6
+randomness = 1.0
+texture = ExtResource("3_wcbjg")
+gravity = Vector2(0, 0)
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_s7nin")
+
+[node name="Hand" type="Node2D" parent="."]
+position = Vector2(-5, 16)
+script = ExtResource("4_fmwce")
+
+[node name="Equip" type="Sprite2D" parent="Hand"]
+texture_filter = 1
+scale = Vector2(3, 3)
+
+[node name="SpriteAnimator" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_5n2av")
+}
+
+[node name="Inventory" type="Node" parent="." node_paths=PackedStringArray("effectHandler")]
+script = ExtResource("5_khdi2")
+effectHandler = NodePath("../Effect_Manager")
+max_size = 5
+
+[node name="Potion" parent="Inventory" node_paths=PackedStringArray("Equipeer") instance=ExtResource("4_jj4kj")]
+position = Vector2(-5, 16)
+effect = ExtResource("8_3p45f")
+item_stack = 4
+Equipeer = NodePath("../../Hand")
+
+[node name="EffectTimeManager" type="Timer" parent="."]
+autostart = true
+
+[node name="Effect_Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_6tc1e")
+
+[connection signal="timeout" from="EffectTimeManager" to="Effect_Manager" method="_on_effect_time_manager_timeout"]

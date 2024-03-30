@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://5u1sl2lgbkmv"]
+
+[ext_resource type="PackedScene" uid="uid://dxtq0fk6eofpv" path="res://Player and Npcs/player.tscn" id="1_nqovy"]
+[ext_resource type="Script" path="res://Scenes/MainInventory.gd" id="2_ay2uj"]
+[ext_resource type="PackedScene" uid="uid://dfdiyrf1u3s7m" path="res://Item and inventory Management/Scenes/slot.tscn" id="2_jl73l"]
+[ext_resource type="Script" path="res://Player and Npcs/PlayerGUI.gd" id="4_2wuc8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p71u3"]
+bg_color = Color(0.996078, 0.996078, 0.996078, 0.054902)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nqovy")]
+position = Vector2(354, 218)
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+script = ExtResource("2_ay2uj")
+
+[node name="QuickItems" type="Control" parent="Inventory"]
+custom_minimum_size = Vector2(372.76, 85)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Background" type="Panel" parent="Inventory/QuickItems"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/QuickItems/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="Background" type="Panel" parent="Inventory/QuickItems/Background/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p71u3")
+
+[node name="GridContainer" type="HBoxContainer" parent="Inventory/QuickItems/Background/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="Slot" parent="Inventory/QuickItems/Background/MarginContainer/GridContainer" instance=ExtResource("2_jl73l")]
+layout_mode = 2
+
+[node name="Slot2" parent="Inventory/QuickItems/Background/MarginContainer/GridContainer" instance=ExtResource("2_jl73l")]
+layout_mode = 2
+
+[node name="Slot3" parent="Inventory/QuickItems/Background/MarginContainer/GridContainer" instance=ExtResource("2_jl73l")]
+layout_mode = 2
+
+[node name="PlayerStatus" type="Control" parent="Inventory"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_2wuc8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/PlayerStatus"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Health" type="Label" parent="Inventory/PlayerStatus/VBoxContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "HP: 
+"
+
+[node name="Defense" type="Label" parent="Inventory/PlayerStatus/VBoxContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "DEF: "
+
+[node name="Speed" type="Label" parent="Inventory/PlayerStatus/VBoxContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "SP:"

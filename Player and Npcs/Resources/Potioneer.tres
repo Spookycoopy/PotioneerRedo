@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCInfo" load_steps=2 format=3 uid="uid://d1k2f0xgrpowa"]
+
+[ext_resource type="Script" path="res://Player and Npcs/NPCInfo.gd" id="1_xa5i2"]
+
+[resource]
+script = ExtResource("1_xa5i2")
+MaxHealth = 100.0
+Health = 50.0
+InitalSpeed = 337.0
+SPEED = 337.0
+InitalDefense = 2.0
+Defense = 2.0
