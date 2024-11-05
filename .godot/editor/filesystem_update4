@@ -1,18 +1,8 @@
-res://Player and Npcs/player.tscn
-res://Item and inventory Management/Items/potion.gd
-res://Item and inventory Management/Effect/Resource/Healing.tres
 res://Scenes/main.tscn
+res://Player and Npcs/Resources/Potioneer.tres
+res://Item and inventory Management/Ingridents/Resources/valo_aera.tres
+res://Item and inventory Management/Effect/Resource/Healing.tres
 res://Scenes/potion.tscn
 res://Item and inventory Management/Scenes/slot.tscn
-res://Scripts/PlayerMovement.gd
-res://Player and Npcs/PlayerInventory.gd
-res://Item and inventory Management/Equipment.gd
-res://Scripts/GameManager.gd
-res://Scenes/MainInventory.gd
-res://Item and inventory Management/ItemClass.gd
-res://Player and Npcs/PlayerGUI.gd
-res://Player and Npcs/Resources/Potioneer.tres
-res://Item and inventory Management/Effect/Scripts/EffectHandler.gd
-res://Item and inventory Management/Effect/Scripts/EffectClass.gd
 res://Item and inventory Management/Effect/CustomEffects/simple_regen.tscn
-res://Item and inventory Management/Effect/CustomEffects/SimpleRegen.gd
+res://Player and Npcs/player.tscn

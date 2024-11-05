@@ -1,6 +1,8 @@
 extends Node
 class_name EffectHandler
 
+signal Ef_Tick
+
 @onready var playerInfo : NPCInfo = $"..".player_info
 @onready var current_effects : Array[Effect]
 
@@ -9,44 +11,43 @@ class_name EffectHandler
 func _ready():
 	GameManager.NextRoom.connect(nextRoom)
 
+func Begin_Tick():
+	for ef in current_effects:
+		ef.queued = true
+		if ef.OneShot: return
+		ef.tick -= 1
+		
+		if ef.tick <= 0:
+			ef.tick = ef.Max_Tick
+			
+			if ef.current_Effects != null : 
+				for i in ef.current_Effects:
+					i.tick()
+			
+			EffectInfo.Update_Effect_On_Target(ef, playerInfo)
+			ef.queued = false
+
 func add_effect(effect : Effect):
-	if effect.Usable:
-		use_effect(effect)
+	use_effect(effect)
 
 func use_effect(effect : Effect):
-	playerInfo.Health += effect.healing * effect.falloff
-	print(playerInfo.Health, " ", effect.healing * effect.falloff)
-	playerInfo.Health = clamp(playerInfo.Health, 0, playerInfo.MaxHealth)
 	
-	playerInfo.SPEED += effect.speed * effect.falloff
-	playerInfo.Defense += effect.defense * effect.falloff
-	
-	effect.tick = effect.Maxtick
-	
-	if not effect.OneShot and effect.effect != null:
-		var new_effect : EffectClass = effect.effect.instantiate()
-		
-		effect.current_Effect = new_effect
-		new_effect.target_info = playerInfo
-		add_child(new_effect)
+	EffectInfo.set_effect_to_player(effect, playerInfo)
+	if not effect.OneShot and effect.Custom_effects != null: add_custom_effect(effect)
 	elif effect.OneShot: reset_effect(effect)
 	
 	current_effects.append(effect)
 
 func _on_effect_time_manager_timeout():
-	for ef in current_effects:
-		if ef.OneShot or ef.effect == null: return
-		ef.tick -= 1
-		if ef.current_Effect : ef.current_Effect.tick()
-		
-		if ef.tick < 0:
-			ef.tick = ef.Maxtick
+	Begin_Tick()
 
 func nextRoom():
 	for ef in current_effects:
 		ef.duration -= 1
 		
 		if ef.duration <= 0:
+			await (ef.queued == false)
+			
 			removeEffect(ef)
 
 func removeEffect(ef : Effect):
@@ -56,6 +57,17 @@ func removeEffect(ef : Effect):
 	current_effects.remove_at(current_effects.find(ef))
 
 func reset_effect(ef : Effect):
-	playerInfo.Defense -= ef.defense * ef.falloff
-	playerInfo.SPEED -= ef.speed * ef.falloff
+	playerInfo.defense -= ef.defense * ef.falloff
+	playerInfo.speed -= ef.speed * ef.falloff
 
+func add_custom_effect(ef : Effect): 
+	for effect in ef.Custom_effects:
+		var new_effect : EffectClass = effect.instantiate()
+		
+		ef.current_Effects.append(new_effect)
+		new_effect.target_info = playerInfo
+		new_effect.effect_info = ef
+		
+		Ef_Tick.connect(new_effect.tick)
+		
+		add_child(new_effect)

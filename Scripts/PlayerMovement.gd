@@ -13,7 +13,7 @@ class_name Player
 func _process(_delta):
 	var dir = get_input_dir()
 	
-	velocity = dir * player_info.SPEED
+	velocity = dir * player_info.speed
 	
 	move_and_slide()
 	anim()

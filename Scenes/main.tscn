@@ -15,6 +15,7 @@ position = Vector2(354, 218)
 
 [node name="Inventory" type="CanvasLayer" parent="."]
 script = ExtResource("2_ay2uj")
+Slot = ExtResource("2_jl73l")
 
 [node name="QuickItems" type="Control" parent="Inventory"]
 custom_minimum_size = Vector2(372.76, 85)
@@ -97,3 +98,46 @@ custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "SP:"
+
+[node name="Inventory" type="Control" parent="Inventory"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Ingredients" type="Control" parent="Inventory/Inventory"]
+anchors_preset = 0
+offset_left = 859.0
+offset_top = 80.0
+offset_right = 1152.0
+offset_bottom = 539.0
+
+[node name="Panel" type="Panel" parent="Inventory/Inventory/Ingredients"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Inventory/Ingredients/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="Inventory/Inventory/Ingredients/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/Inventory/Ingredients/Panel/MarginContainer"]
+layout_mode = 2
+columns = 3

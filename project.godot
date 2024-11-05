@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/GameManager.gd"
+EffectInfo="*res://Item and inventory Management/Effect/Scripts/EffectInfo.gd"
 
 [input]
 

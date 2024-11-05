@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_xa5i2")
 MaxHealth = 100.0
-Health = 50.0
+health = 10.0
 InitalSpeed = 337.0
-SPEED = 337.0
-InitalDefense = 2.0
-Defense = 2.0
+speed = 337.0
+InitalDefense = 10.0
+defense = 10.0

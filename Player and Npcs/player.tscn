@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxtq0fk6eofpv"]
+[gd_scene load_steps=18 format=3 uid="uid://dxtq0fk6eofpv"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_hx7nr"]
 [ext_resource type="Texture2D" uid="uid://cbetpmyjjtij0" path="res://Sprites/potioneer.png" id="2_16vvg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Item and inventory Management/Equipment.gd" id="4_fmwce"]
 [ext_resource type="PackedScene" uid="uid://b75pxb5i606x4" path="res://Scenes/potion.tscn" id="4_jj4kj"]
 [ext_resource type="Script" path="res://Player and Npcs/PlayerInventory.gd" id="5_khdi2"]
+[ext_resource type="Resource" uid="uid://bg18p3yvd638i" path="res://Item and inventory Management/Ingridents/Resources/valo_aera.tres" id="7_3k1me"]
 [ext_resource type="Resource" uid="uid://bpg7j7gqfhmlm" path="res://Item and inventory Management/Effect/Resource/Healing.tres" id="8_3p45f"]
 [ext_resource type="Script" path="res://Item and inventory Management/Effect/Scripts/EffectHandler.gd" id="8_6tc1e"]
 
@@ -284,6 +285,7 @@ libraries = {
 [node name="Inventory" type="Node" parent="." node_paths=PackedStringArray("effectHandler")]
 script = ExtResource("5_khdi2")
 effectHandler = NodePath("../Effect_Manager")
+inv_ingridents = Array[Resource("res://Item and inventory Management/IngridentResource.gd")]([ExtResource("7_3k1me")])
 max_size = 5
 
 [node name="Potion" parent="Inventory" node_paths=PackedStringArray("Equipeer") instance=ExtResource("4_jj4kj")]

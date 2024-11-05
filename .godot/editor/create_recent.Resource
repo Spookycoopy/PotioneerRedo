@@ -1,3 +1,3 @@
-Effect
 Ingrident_Resource
+Effect
 Item

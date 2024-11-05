@@ -8,6 +8,8 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == 1 and Current_item != null :
 			Current_item.Interact()
+			
+			if Current_item and Current_item.item_type == "Potion": unequip()
 
 func _process(_delta):
 	look_at(get_global_mouse_position())
@@ -22,3 +24,7 @@ func RemoveEquip():
 	Current_item = null
 	equipSprite.texture = null
 	return
+
+func unequip():
+	Current_item = null
+	equipSprite.texture = null

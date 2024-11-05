@@ -2,4 +2,5 @@ extends EffectClass
 
 
 func tick():
-	target_info.Health += 1
+	super()
+	target_info.heal(2 * effectiveness)

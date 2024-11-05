@@ -1,18 +1,17 @@
 [gd_resource type="Resource" script_class="Effect" load_steps=3 format=3 uid="uid://bpg7j7gqfhmlm"]
 
-[ext_resource type="PackedScene" uid="uid://cllf7hggocqxp" path="res://Item and inventory Management/Effect/CustomEffects/simple_regen.tscn" id="1_qqdxh"]
 [ext_resource type="Script" path="res://Item and inventory Management/Effect/Scripts/EffectResource.gd" id="1_w2fdo"]
+[ext_resource type="PackedScene" uid="uid://cllf7hggocqxp" path="res://Item and inventory Management/Effect/CustomEffects/simple_regen.tscn" id="1_y2yik"]
 
 [resource]
 script = ExtResource("1_w2fdo")
-Usable = true
 OneShot = false
-effect = ExtResource("1_qqdxh")
-healing = 25.0
-speed = 1000.0
+Custom_effects = Array[PackedScene]([ExtResource("1_y2yik")])
+healing = 27.0
+speed = 0.0
 defense = 0.0
-Phys_Moves = 0.0
+Physical_Moves = 0.0
 Magic_Moves = 0.0
-Maxtick = 0
-duration = 3.0
+Max_Tick = 2
+duration = 0
 falloff = 1.0

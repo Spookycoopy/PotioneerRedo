@@ -4,3 +4,4 @@
 
 [node name="SimpleRegen" type="Node2D"]
 script = ExtResource("1_pfd55")
+effectiveness = 1.5

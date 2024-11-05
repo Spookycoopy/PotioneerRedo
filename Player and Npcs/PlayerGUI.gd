@@ -8,6 +8,6 @@ extends Control
 @onready var sp_lbl = $VBoxContainer/Speed
 
 func _process(delta):
-	hp_lbl.text = "hp: " + str(info.Health)
-	def_lbl.text = "def: " + str(info.Defense)
-	sp_lbl.text = "sp: " + str(info.SPEED)
+	hp_lbl.text = "hp: " + str(info.health)
+	def_lbl.text = "def: " + str(info.defense)
+	sp_lbl.text = "sp: " + str(info.speed)

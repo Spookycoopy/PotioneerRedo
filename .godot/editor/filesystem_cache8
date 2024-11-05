@@ -1,48 +1,53 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711738726
-icon.svg::CompressedTexture2D::440094986445041151::1711493601::1711493626::1::::<><>::
-::res://Item and inventory Management/::1711740454
-Equipment.gd::GDScript::-1::1711740454::0::1::::EquipManager<>Node2D<>::
-IngridentResource.gd::GDScript::-1::1711664140::0::1::::Ingrident_Resource<>Resource<>::
-Inventory.gd::GDScript::-1::1711659340::0::1::::Inventory<>Node<>::
-ItemClass.gd::GDScript::-1::1711740440::0::1::::Item<>Node2D<>::
-slot.gd::GDScript::-1::1711638353::0::1::::slot<>MarginContainer<>::
-::res://Item and inventory Management/Effect/::1711661734
-::res://Item and inventory Management/Effect/Resource/::1711741257
-Healing.tres::Resource/Effect::3453600311451585338::1711741257::0::1::::<><>::res://Item and inventory Management/Effect/Scripts/EffectResource.gd
-::res://Item and inventory Management/Effect/Scripts/::1711741102
-EffectClass.gd::GDScript::-1::1711726074::0::1::::EffectClass<>Node<>::
-EffectHandler.gd::GDScript::-1::1711741102::0::1::::EffectHandler<>Node<>::
-EffectResource.gd::GDScript::-1::1711726214::0::1::::Effect<>Resource<>::
-::res://Item and inventory Management/Ingridents/::1711654489
-::res://Item and inventory Management/Ingridents/Resources/::1711666451
-valo_aera.tres::Resource/Resource::2863259523485231138::1711666451::0::1::::<><>::res://Item and inventory Management/IngridentResource.gd<>res://Item and inventory Management/Effect/Scripts/EffectResource.gd
-::res://Item and inventory Management/Ingridents/Scenes/::1711654482
-::res://Item and inventory Management/Ingridents/Scripts/::1711661379
-::res://Item and inventory Management/Items/::1711738738
-potion.gd::GDScript::-1::1711738738::0::1::::<>Item<>::
-::res://Item and inventory Management/Scenes/::1711741258
-slot.tscn::PackedScene::7516928899357638324::1711741258::0::1::::<><>::res://Item and inventory Management/slot.gd
-::res://Player and Npcs/::1711741257
-NPCInfo.gd::GDScript::-1::1711659055::0::1::::NPCInfo<>Resource<>::
-player.tscn::PackedScene::8813845028292264503::1711741257::0::1::::<><>::res://Scripts/PlayerMovement.gd<>uid://cbetpmyjjtij0::::res://Sprites/potioneer.png<>uid://d1k2f0xgrpowa::::res://Player and Npcs/Resources/Potioneer.tres<>uid://cfwxabc0neskr::::res://Sprites/particle/cloud.png<>res://Item and inventory Management/Equipment.gd<>uid://b75pxb5i606x4::::res://Scenes/potion.tscn<>res://Player and Npcs/PlayerInventory.gd<>uid://bpg7j7gqfhmlm::::res://Item and inventory Management/Effect/Resource/Healing.tres<>res://Item and inventory Management/Effect/Scripts/EffectHandler.gd
-PlayerInventory.gd::GDScript::-1::1711737365::0::1::::<>Inventory<>::
-PlayerGUI.gd::GDScript::-1::1711741156::0::1::::<>Control<>::
-::res://Player and Npcs/Resources/::1711740937
-Potioneer.tres::Resource/NPCInfo::9006465399893153836::1711740937::0::1::::<><>::res://Player and Npcs/NPCInfo.gd
-::res://Potioneer/::1711659867
-::res://ROOMS GEN/::1711506332
-::res://ROOMS GEN/Walls/::1711618619
-::res://Scenes/::1711741258
-main.tscn::PackedScene::2148564270298813021::1711741258::0::1::::<><>::uid://dxtq0fk6eofpv::::res://Player and Npcs/player.tscn<>res://Scenes/MainInventory.gd<>uid://dfdiyrf1u3s7m::::res://Item and inventory Management/Scenes/slot.tscn<>res://Player and Npcs/PlayerGUI.gd
-MainInventory.gd::GDScript::-1::1711740633::0::1::::<>CanvasLayer<>::
-potion.tscn::PackedScene::4695346940156651871::1711741258::0::1::::<><>::uid://dv6knoyx378le::::res://Sprites/particle/potion.png<>res://Item and inventory Management/Items/potion.gd
-::res://Scripts/::1711738738
-PlayerMovement.gd::GDScript::-1::1711737142::0::1::::Player<>CharacterBody2D<>::
-GameManager.gd::GDScript::-1::1711738738::0::1::::Manager<>Node<>::
-::res://Sprites/::1711621334
-potioneer.png::CompressedTexture2D::4852468799588819763::1711618656::1711618657::1::::<><>::
-::res://Sprites/particle/::1711622459
-cloud.png::CompressedTexture2D::5170598443765703101::1711621460::1711621462::1::::<><>::
-potion.png::CompressedTexture2D::8697854636588200990::1711622439::1711622459::1::::<><>::
-::res://Sprites/Walls/::1711618628
+::res://::1715578150
+icon.svg::CompressedTexture2D::440094986445041151::1711497201::1711497226::1::::<><>::
+::res://Item and inventory Management/::1711837713
+Equipment.gd::GDScript::-1::1711837713::0::1::::EquipManager<>Node2D<>::
+IngridentResource.gd::GDScript::-1::1711667740::0::1::::Ingrident_Resource<>Resource<>::
+Inventory.gd::GDScript::-1::1711662940::0::1::::Inventory<>Node<>::
+ItemClass.gd::GDScript::-1::1711744040::0::1::::Item<>Node2D<>::
+slot.gd::GDScript::-1::1711837562::0::1::::slot<>MarginContainer<>::
+::res://Item and inventory Management/Effect/::1711745508
+::res://Item and inventory Management/Effect/CustomEffects/::1712170254
+SimpleRegen.gd::GDScript::-1::1711918163::0::1::::<>EffectClass<>::
+simple_regen.tscn::PackedScene::5567987910291701517::1712170254::0::1::::<><>::res://Item and inventory Management/Effect/CustomEffects/SimpleRegen.gd
+::res://Item and inventory Management/Effect/Resource/::1712170254
+Healing.tres::Resource/Effect::3453600311451585338::1712170254::0::1::::<><>::res://Item and inventory Management/Effect/Scripts/EffectResource.gd<>uid://cllf7hggocqxp::::res://Item and inventory Management/Effect/CustomEffects/simple_regen.tscn
+::res://Item and inventory Management/Effect/Scripts/::1711917697
+EffectClass.gd::GDScript::-1::1711917697::0::1::::EffectClass<>Node<>::
+EffectHandler.gd::GDScript::-1::1711915596::0::1::::EffectHandler<>Node<>::
+EffectInfo.gd::GDScript::-1::1711907664::0::1::::Data_Effect<>Node<>::
+EffectResource.gd::GDScript::-1::1711901443::0::1::::Effect<>Resource<>::
+::res://Item and inventory Management/Ingridents/::1711658089
+::res://Item and inventory Management/Ingridents/Resources/::1712170254
+valo_aera.tres::Resource/Ingrident_Resource::2863259523485231138::1712170254::0::1::::<><>::res://Item and inventory Management/IngridentResource.gd<>res://Item and inventory Management/Effect/Scripts/EffectResource.gd<>uid://bdsvwrstkckf5::::res://Sprites/valo_aera.png
+::res://Item and inventory Management/Ingridents/Scenes/::1711658082
+::res://Item and inventory Management/Ingridents/Scripts/::1711664979
+::res://Item and inventory Management/Items/::1712025350
+potion.gd::GDScript::-1::1711742338::0::1::::<>Item<>::
+::res://Item and inventory Management/Items/Ingredient/::1712025638
+::res://Item and inventory Management/Scenes/::1712170254
+slot.tscn::PackedScene::7516928899357638324::1712170254::0::1::::<><>::res://Item and inventory Management/slot.gd
+::res://Player and Npcs/::1712170255
+NPCInfo.gd::GDScript::-1::1711836572::0::1::::NPCInfo<>Resource<>::
+player.tscn::PackedScene::8813845028292264503::1712170254::0::1::::<><>::res://Scripts/PlayerMovement.gd<>uid://cbetpmyjjtij0::::res://Sprites/potioneer.png<>uid://d1k2f0xgrpowa::::res://Player and Npcs/Resources/Potioneer.tres<>uid://cfwxabc0neskr::::res://Sprites/particle/cloud.png<>res://Item and inventory Management/Equipment.gd<>uid://b75pxb5i606x4::::res://Scenes/potion.tscn<>res://Player and Npcs/PlayerInventory.gd<>uid://bg18p3yvd638i::::res://Item and inventory Management/Ingridents/Resources/valo_aera.tres<>uid://bpg7j7gqfhmlm::::res://Item and inventory Management/Effect/Resource/Healing.tres<>res://Item and inventory Management/Effect/Scripts/EffectHandler.gd
+PlayerGUI.gd::GDScript::-1::1711836492::0::1::::<>Control<>::
+PlayerInventory.gd::GDScript::-1::1711740965::0::1::::<>Inventory<>::
+::res://Player and Npcs/Resources/::1712170254
+Potioneer.tres::Resource/NPCInfo::9006465399893153836::1712170254::0::1::::<><>::res://Player and Npcs/NPCInfo.gd
+::res://ROOMS GEN/::1711509932
+::res://ROOMS GEN/Walls/::1711622219
+::res://Scenes/::1712170254
+main.tscn::PackedScene::2148564270298813021::1712170253::0::1::::<><>::uid://dxtq0fk6eofpv::::res://Player and Npcs/player.tscn<>res://Scenes/MainInventory.gd<>uid://dfdiyrf1u3s7m::::res://Item and inventory Management/Scenes/slot.tscn<>res://Player and Npcs/PlayerGUI.gd
+MainInventory.gd::GDScript::-1::1712025283::0::1::::<>CanvasLayer<>::
+potion.tscn::PackedScene::4695346940156651871::1712170254::0::1::::<><>::uid://dv6knoyx378le::::res://Sprites/particle/potion.png<>res://Item and inventory Management/Items/potion.gd
+::res://Scripts/::1711836765
+GameManager.gd::GDScript::-1::1711746553::0::1::::Manager<>Node<>::
+PlayerMovement.gd::GDScript::-1::1711836765::0::1::::Player<>CharacterBody2D<>::
+::res://Sprites/::1712025494
+potioneer.png::CompressedTexture2D::4852468799588819763::1711622256::1711622257::1::::<><>::
+valo_aera.png::CompressedTexture2D::2635461280074436352::1712025492::1712025494::1::::<><>::
+::res://Sprites/particle/::1711626059
+cloud.png::CompressedTexture2D::5170598443765703101::1711625060::1711625062::1::::<><>::
+potion.png::CompressedTexture2D::8697854636588200990::1711626039::1711626059::1::::<><>::
+::res://Sprites/Walls/::1711622228
